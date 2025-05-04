@@ -1,25 +1,29 @@
 package com.example.unifacilita10;
 
 import android.os.Bundle;
-import android.widget.Button;
-
-import androidx.activity.EdgeToEdge;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 public class FaleConoscoActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_faleconosco);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.fale_conosco), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+
+        LinearLayout opcaoWhatsApp = findViewById(R.id.opcaoWhatsApp);
+        LinearLayout opcaoTelefone = findViewById(R.id.opcaoTelefone);
+        LinearLayout opcaoMensagem = findViewById(R.id.opcaoMensagem);
+
+        opcaoWhatsApp.setOnClickListener(v ->
+                Toast.makeText(this, "Abrir chat no WhatsApp", Toast.LENGTH_SHORT).show());
+
+        opcaoTelefone.setOnClickListener(v ->
+                Toast.makeText(this, "Entre em contato pelo fone 0800 603 0603", Toast.LENGTH_SHORT).show());
+
+        opcaoMensagem.setOnClickListener(v ->
+                Toast.makeText(this, "Abrir formulário de mensagem", Toast.LENGTH_SHORT).show());
     }
 }
+
