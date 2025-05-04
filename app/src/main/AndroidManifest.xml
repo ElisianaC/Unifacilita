@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -15,24 +14,15 @@
 
         <activity android:name=".MensagemActivity" android:exported="false" />
 
-        <activity
-            android:name=".ReuniaoActivity"
-            android:exported="false" />
-        <activity
-            android:name=".FaleConoscoActivity"
-            android:exported="false"/>
-        <activity
-            android:name=".LoginFaculdadesActivity"
-            android:exported="false"/>
-        <activity
-            android:name=".HomeActivity"
-            android:exported="false"/>
-        <activity
-            android:name=".FaculdadesActivity"
-            android:exported="false"/>
-        <activity
-            android:name=".LoginActivity"
-            android:exported="true">
+        <!-- Adicionando explicitamente o android:exported na BibliotecaActivity -->
+        <activity android:name=".BibliotecaActivity" android:exported="true" />
+
+        <activity android:name=".ReuniaoActivity" android:exported="false" />
+        <activity android:name=".FaleConoscoActivity" android:exported="false" />
+        <activity android:name=".LoginFaculdadesActivity" android:exported="false" />
+        <activity android:name=".HomeActivity" android:exported="false" />
+        <activity android:name=".FaculdadesActivity" android:exported="false" />
+        <activity android:name=".LoginActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -42,3 +32,4 @@
     </application>
 
 </manifest>
+

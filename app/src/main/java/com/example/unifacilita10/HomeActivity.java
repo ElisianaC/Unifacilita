@@ -24,7 +24,7 @@ public class HomeActivity extends AppCompatActivity {
     };
 
     private Class<?>[] activities = {   //trocar o nome das activities de cada módulo. Aqui todas as opções do menu estão na FaleConoscoActivity. Precisa sequir a mesma ordem da lista "nomes" acima
-            FaleConoscoActivity.class, FaleConoscoActivity.class, FaleConoscoActivity.class,
+            FaleConoscoActivity.class, BibliotecaActivity.class, FaleConoscoActivity.class,
             ReuniaoActivity.class, FaleConoscoActivity.class, FaleConoscoActivity.class,
             FaleConoscoActivity.class, FaleConoscoActivity.class, FaleConoscoActivity.class
     };
