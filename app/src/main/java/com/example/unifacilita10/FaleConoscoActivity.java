@@ -1,8 +1,10 @@
 package com.example.unifacilita10;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class FaleConoscoActivity extends AppCompatActivity {
@@ -22,8 +24,11 @@ public class FaleConoscoActivity extends AppCompatActivity {
         opcaoTelefone.setOnClickListener(v ->
                 Toast.makeText(this, "Entre em contato pelo fone 0800 603 0603", Toast.LENGTH_SHORT).show());
 
-        opcaoMensagem.setOnClickListener(v ->
-                Toast.makeText(this, "Abrir formulário de mensagem", Toast.LENGTH_SHORT).show());
+        opcaoMensagem.setOnClickListener(v -> {
+            Intent intent = new Intent(FaleConoscoActivity.this, MensagemActivity.class);
+            startActivity(intent);
+        });
     }
 }
+
 
