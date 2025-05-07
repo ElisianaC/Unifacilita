@@ -1,35 +1,32 @@
 package com.example.unifacilita10;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class BibliotecaActivity extends AppCompatActivity {
-    private RecyclerView recyclerView;
-    private LivrosAdapter adapter;
-    private List<Livro> livrosList;  // Lista de livros (modelo de dados)
+
+    private EditText editTextPesquisar;
+    private Button btnBuscar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_biblioteca);
 
-        // Inicializando RecyclerView
-        recyclerView = findViewById(R.id.recyclerViewLivros);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        // Inicializando os componentes
+        editTextPesquisar = findViewById(R.id.editTextPesquisar);
+        btnBuscar = findViewById(R.id.btnBuscar);
 
-        // Inicializando a lista de livros
-        livrosList = new ArrayList<>();
-        livrosList.add(new Livro("José Dornelas", "Empreendedorismo", "Retirar"));
-        livrosList.add(new Livro("Jerônimo Mendes", "Empreendedorismo 360°", "Retirar"));
-        livrosList.add(new Livro("Tarcísio Teixeira", "Startups e Inovação", "Retirar"));
-
-        // Criando o adaptador
-        adapter = new LivrosAdapter(this, livrosList);
-        recyclerView.setAdapter(adapter);
+        // Definindo a ação do botão "Buscar"
+        btnBuscar.setOnClickListener(v -> {
+            // Aqui você pode adicionar a lógica para realizar a busca
+            String pesquisa = editTextPesquisar.getText().toString();
+            // Implemente a lógica de pesquisa com base no texto digitado
+        });
     }
 }
+
+
